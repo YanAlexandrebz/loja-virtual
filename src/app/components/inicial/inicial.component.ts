@@ -1,6 +1,8 @@
+import { CarrinhoService } from './../../services/carrinho.service';
 import { ProdutoService } from './../../services/produto.service';
 import { Component, OnInit } from '@angular/core';
 import { Produto } from 'src/app/models/produto.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inicial',
@@ -11,11 +13,18 @@ export class InicialComponent implements OnInit {
 
   produtos: Produto[] = [];
 
-  constructor(private produtoService: ProdutoService) { }
+  constructor(
+    private produtoService: ProdutoService,
+    private router: Router,
+    private carrinhoService: CarrinhoService) { }
 
   ngOnInit(): void {
     this.produtos = this.produtoService.listarTodos();
   }
 
+  adicionarCarrinho(produto: Produto){
+    this.carrinhoService.adicionar(produto);
+    this.router.navigate(['/carrinho']);
+  }
 
 }

@@ -1,0 +1,5 @@
+.btn-custom:hover{
+    background-color: lightgreen;
+    border: lightgreen;
+    color: black;
+}

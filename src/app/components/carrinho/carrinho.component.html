@@ -1,1 +1,69 @@
-<p>carrinho works!</p>
+<br>
+<div class="mask d-flex h-100">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-10 ">
+        <div class="card mask-custom">
+          <div class="card-body p-4 text-black">
+            <div class="my-4">
+                <table class="table table-hover">
+                    <tbody>
+                      <tr class="table-light">
+                        <td colspan="3" class="titulo">Carrinho de compras</td>
+                      </tr>
+                      <tr >
+                          <td colspan="3" *ngIf="itens.length === 0">
+                            Carrinho Vazio.
+                          </td>
+                      </tr>
+                      <tr *ngFor="let item of itens">
+                        <td class="td-img">
+                          <img
+                            src="assets/produtos/{{ item.produto.fotos[0] }}"
+                            class="card-img-top img-thumbnail"
+                            [alt]="item.produto.nome"
+                          />
+                        </td>
+                        <td class="td-col">
+                            {{ item.produto.nome }}
+                        </td>
+                        <td class="td-col td-preco">
+                          {{ item.quantidade }}x - {{ item.produto.preco | currency: "BRL" }}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="3" class="total" *ngIf="itens.length > 0">
+                          {{ total | currency: "BRL" }}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="row">
+                    <div class="col text-center">
+                      <button
+                        type="button"
+                        class="btn btn-lg btn-success"
+                        (click)="finalizarCompra()"
+                        *ngIf="itens.length > 0"
+                      >
+                        <i class="bi bi-cart-check"></i> Finalizar compra
+                      </button>
+                        &nbsp;
+                      <button
+                        type="button"
+                        class="btn btn-lg btn-danger"
+                        [routerLink]="['']"
+                        *ngIf="itens.length > 0"
+                      >
+                        Continuar comprando
+                      </button>
+                    </div>
+                  </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
