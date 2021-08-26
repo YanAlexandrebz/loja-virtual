@@ -1,1 +1,38 @@
-<p>produto works!</p>
+<div  class="row" *ngIf="produto">
+    <div class="col">
+        <img
+            src="assets/produtos/{{ produto.fotos[0] }}"
+            class="card-img-top"
+            [alt]="produto.nome"
+        />
+    </div>
+    <div class="col">
+        <br>
+        <h2>{{ produto.nome }}</h2>
+        <br>
+        <br>
+        <hr/>
+        <div class="alert alert-info" role="alert">
+            <h5 class="text-center">
+                <strong>{{ produto.preco | currency:'BRL' }}</strong>
+            </h5>
+        </div>
+        <div class="text-center">
+            <button 
+            type="button" 
+            class="btn btn-lg btn-dark btn-custom"
+            (click)="adicionarCarrinho()">
+                <i class="bi bi-cart"></i> Adicionar ao Carrinho
+              </button>
+        </div>
+    </div>
+    <div class="row" *ngIf="produto">
+        <div class="col text-center">
+          <h3>Descrição do produto</h3>
+          <hr />
+          <p *ngFor="let descricao of produto.descricao">
+            {{ descricao }}
+          </p>
+        </div>
+    </div>  
+</div>
