@@ -1,8 +1,10 @@
 .td-img {
     width: 100px;
+    cursor: pointer;
 }
 .td-col {
     vertical-align: middle;
+    cursor: pointer;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .td-preco {
@@ -38,3 +40,4 @@
     background-clip: content-box;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.03);
 }
+

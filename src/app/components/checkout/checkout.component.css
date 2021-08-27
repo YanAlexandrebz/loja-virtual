@@ -1,0 +1,61 @@
+.td-img {
+    width: 100px;
+    cursor: pointer;
+}
+.td-col {
+    vertical-align: middle;
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.td-preco {
+    text-align: right;
+    font-weight: bold;
+    padding-right: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+  
+.total {
+    text-align: right;
+    color: rgb(8, 139, 63);
+    font-weight: bold;
+    padding-right: 20px;
+    font-size: 20px;
+    background-color: rgb(41, 41, 41);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+  
+.titulo {
+    font-size: 45px;
+    text-align: center;
+    border-radius: 3em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: transparent;
+    font-style: italic;
+    color: rgb(41, 122, 41);
+}
+
+.mask-custom {
+    background-color: rgba(42, 43, 42, 0.2);
+    border-radius: 2em;
+    background-clip: content-box;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.03);
+}
+
+.titulo-finalizar{
+    font-size: 45px;
+    text-align: center;
+    border-radius: 3em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: transparent;
+    font-style: italic;
+    color: rgb(29, 29, 29);
+}
+
+.txt-input {
+    margin-top: 10px;
+  }
+  
+  .btn-pagar {
+    margin-top: 10px;
+    width: 100%;
+  }
