@@ -21,8 +21,13 @@ export class ProdutoComponent implements OnInit {
   ngOnInit(): void {
     //pega o ID da url
     // '+' converte para number
-    const produtoId = +this.route.snapshot.params['id'];
-    this.produto = this.produtoService.listarId(produtoId);
+    //const produtoId = +this.route.snapshot.params['id'];
+    //this.produto = this.produtoService.listarId(produtoId);
+
+    //Observa e avisa sobre a mudanca, para mudar o componente
+    this.route.params.subscribe(routeParams => {
+      this.produto = this.produtoService.listarId(+routeParams.id);
+    });
   }
 
   adicionarCarrinho(){

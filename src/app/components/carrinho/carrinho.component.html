@@ -24,12 +24,34 @@
                             [alt]="item.produto.nome"
                           />
                         </td>
-                        <td class="td-col">
+                        <td class="td-col"
+                        [routerLink]="['/produto/' + item.produto.id]">
                             {{ item.produto.nome }}
                         </td>
                         <td class="td-col td-preco">
-                          {{ item.quantidade }}x - {{ item.produto.preco | currency: "BRL" }}
+                            {{ item.produto.preco | currency: "BRL" }}
+                            &nbsp;
+                            <button
+                            type="button"
+                            class="btn btn-sm btn-success"
+                            (click)="adicionarCarrinho(item.produto)"
+                            *ngIf="itens.length > 0"
+                            >
+                            <i class="bi bi-plus-lg"></i>
+                            </button>
+                            &nbsp;
+                            <b>{{ item.quantidade }}x</b>
+                            &nbsp;
+                            <button
+                            type="button"
+                            class="btn btn-sm btn-danger"
+                            (click)="removerCarrinho(item.produto.id)"
+                            *ngIf="itens.length > 0"
+                            >
+                            <i class="bi bi-dash-lg"></i>
+                          </button>
                         </td>
+          
                       </tr>
                       <tr>
                         <td colspan="3" class="total" *ngIf="itens.length > 0">
@@ -43,7 +65,7 @@
                       <button
                         type="button"
                         class="btn btn-lg btn-success"
-                        (click)="finalizarCompra()"
+                        [routerLink]="['/checkout']"
                         *ngIf="itens.length > 0"
                       >
                         <i class="bi bi-cart-check"></i> Finalizar compra
@@ -53,13 +75,12 @@
                         type="button"
                         class="btn btn-lg btn-danger"
                         [routerLink]="['']"
-                        *ngIf="itens.length > 0"
+                        *ngIf="itens.length > 0 || itens.length === 0"
                       >
                         Continuar comprando
                       </button>
                     </div>
                   </div>
-
             </div>
           </div>
         </div>
